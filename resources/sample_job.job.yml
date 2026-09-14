@@ -7,19 +7,19 @@ resources:
       tasks:
         - task_key: create_bronze
           notebook_task:
-            notebook_path: ../src/create_table_bronze
+            notebook_path: ../src/create_table_bronze.ipynb
             source: WORKSPACE
         - task_key: create_silver
           depends_on:
             - task_key: create_bronze
           notebook_task:
-            notebook_path: ../src/create_table_silver
+            notebook_path: ../src/create_table_silver.ipynb
             source: WORKSPACE
         - task_key: create_gold
           depends_on:
             - task_key: create_silver
           notebook_task:
-            notebook_path: ../src/create_table_gold
+            notebook_path: ../src/create_table_gold.ipynb
             source: WORKSPACE
       queue:
         enabled: true
